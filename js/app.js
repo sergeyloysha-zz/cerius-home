@@ -5,6 +5,23 @@
 $(function(){
   $('.ce-home-slider__list').owlCarousel({
     loop:true,
-    items: 1
+    items: 1,
+    nav: true,
+    navText: ['', '']
+  });
+
+  $('.ce-fields__list').owlCarousel({
+    loop:true,
+    items: 3,
+    nav: true,
+    navText: ['', '']
+  });
+
+  $('.ce-clients__list').owlCarousel({
+    loop:true,
+    items: 4,
+    dots: false,
+    nav: true,
+    navText: ['', '']
   });
 });
