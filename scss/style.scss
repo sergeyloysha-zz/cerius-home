@@ -7,6 +7,10 @@ $timing: .25s;
 $color-blue: rgb(46, 117, 181);
 $color-orange: rgb(249, 136, 5);
 
+$s: 768px;
+$m: 992px;
+$l: 1280px;
+
 @keyframes slide-arrow-1 {
   0% {
     opacity: 0;
@@ -36,24 +40,38 @@ $color-orange: rgb(249, 136, 5);
 
 .ce-heading {
   &_h1 {
-    font-size: 60px;
-    line-height: 68px;
+    font-size: 42px;
+    line-height: 50px;
     font-family: "Roboto";
     color: rgb(5, 7, 8);
+
+    @media only screen and (min-width: $s) {
+      font-size: 60px;
+      line-height: 68px;
+    }
   }
 
   &_h3 {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 24px;
+    line-height: 32px;
     font-family: "Roboto";
     color: rgb(5, 7, 8);
+
+    @media only screen and (min-width: $s) {
+      font-size: 36px;
+      line-height: 44px;
+    }
   }
 
   &_h4 {
-    font-size: 30px;
+    font-size: 24px;
     font-family: "Roboto";
     color: rgb(0, 0, 0);
     line-height: 1.4;
+
+    @media only screen and (min-width: $s) {
+      font-size: 30px;
+    }
   }
 }
 
@@ -157,17 +175,29 @@ $color-orange: rgb(249, 136, 5);
 }
 
 .ce-header {
-  border-bottom: 5px solid #f3f3f3;
+
+  @media screen and (min-width: $m) {
+    border-bottom: 5px solid #f3f3f3;
+  }
 
   &__inner {
     display: flex;
     align-items: center;
-    padding: 15px 0;
+    padding: 10px 0;
+
+    @media screen and (min-width: $m) {
+      padding: 15px 0;
+    }
   }
 
   &__logo {
     img {
       display: block;
+      max-width: 80px;
+
+      @media screen and (min-width: $m) {
+        max-width: 150px;
+      }
     }
   }
 
@@ -180,9 +210,13 @@ $color-orange: rgb(249, 136, 5);
 
     &-top,
     &-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
+      display: none;
+
+      @media screen and (min-width: $m) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
     }
 
     &-top {
@@ -200,6 +234,51 @@ $color-orange: rgb(249, 136, 5);
 
   &__nav {
     margin-right: 10px;
+  }
+
+  &__items {
+    display: none;
+    @media screen and (max-width: $m - 1) {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    display: none;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    @media screen and (max-width: $m - 1) {
+      display: block;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_menu {
+      background-image: url('../images/item_menu.svg');
+      background-size: 30px 19px;
+    }
+    &_call {
+      background-image: url('../images/item_call.svg');
+      background-size: 30px 29px;
+    }
+    &_contact {
+      background-image: url('../images/item_contact.svg');
+      background-size: 30px 30px;
+    }
+    &_profile {
+      background-image: url('../images/item_profile.svg');
+      background-size: 30px 30px;
+    }
   }
 }
 
@@ -367,22 +446,32 @@ $color-orange: rgb(249, 136, 5);
     display: flex;
     align-items: center;
 
-    padding: 50px 0;
-    min-height: 560px;
+    padding: 30px 0;
+    min-height: 620px;
     height: 100%;
 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    @media screen and (min-width: $s) {
+      padding: 50px 0;
+      min-height: 560px;
+    }
   }
 
   &__results {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 20px;
     font-family: "Roboto";
     color: rgba(0, 0, 0, 0.502);
     font-weight: 600;
     text-transform: uppercase;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 25px;
+      line-height: 30px;
+    }
   }
 
   &__h1 {
@@ -391,12 +480,16 @@ $color-orange: rgb(249, 136, 5);
   }
 
   &__p {
-    font-size: 30px;
+    font-size: 18px;
     font-family: "Roboto";
     color: rgb(5, 7, 8);
     line-height: 1.332;
     margin: 10px 0;
     font-weight: 300;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 30px;
+    }
   }
 
   &__points {
@@ -405,14 +498,19 @@ $color-orange: rgb(249, 136, 5);
   }
 
   &__point {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 22px;
     margin: 10px 0 10px 25px;
     font-family: "Roboto";
     color: rgb(0, 0, 0);
     font-weight: 300;
     padding: 0 0 0 20px;
     list-style-type: square;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 
   &__button {
@@ -430,10 +528,6 @@ $color-orange: rgb(249, 136, 5);
     content: ' ';
 
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -441,25 +535,52 @@ $color-orange: rgb(249, 136, 5);
   }
 
   &::before {
-    right: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%;
     background-image: url('../images/ce-starts__company.jpg');
+
+    @media only screen and (min-width: 768px) {
+      top: 0;
+      left: 0;
+      right: 50%;
+      bottom: 0;
+    }
   }
 
   &::after {
-    left: 50%;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url('../images/ce-starts__executive.jpg');
+
+    @media only screen and (min-width: 768px) {
+      top: 0;
+      left: 50%;
+      right: 0;
+      bottom: 0;
+    }
   }
 }
 
 .ce-starts {
-  padding: 60px 0;
+
+  @media only screen and (min-width: 768px) {
+    padding: 60px 0;
+  }
 }
 
 .ce-start {
   padding: 60px 0;
 
   &_executive {
-    padding-left: 60px;
+
+    @media only screen and (min-width: 992px) {
+      padding-left: 60px;
+    }
+
   }
 
   &__top {
@@ -496,13 +617,26 @@ $color-orange: rgb(249, 136, 5);
   background: #f3f3f3;
   padding: 50px 0;
 
+  @media only screen and (max-width: $m - 1) {
+    .ce-container {
+      padding: 0;
+    }
+  }
+
   &__inner {
-    padding-top: 50px;
     overflow: hidden;
+
+    @media screen and (min-width: $s) {
+      padding-top: 50px;
+    }
   }
 
   &__head {
     text-align: center;
+
+    @media only screen and (max-width: $m - 1) {
+      padding: 0 15px;
+    }
   }
 
   &__title {
@@ -511,11 +645,15 @@ $color-orange: rgb(249, 136, 5);
   }
 
   &__subtitle {
-    font-size: 20px;
+    font-size: 15px;
     font-family: "Roboto";
     font-weight: 300;
     color: rgb(0, 0, 0);
     line-height: 1.6;
+
+    @media only screen and (min-width: $s) {
+      font-size: 20px;
+    }
   }
 
   &__list {
@@ -583,7 +721,7 @@ $color-orange: rgb(249, 136, 5);
   }
 
   &__item {
-    padding: 0 10px;
+    padding: 0 15px;
   }
 }
 
@@ -615,25 +753,37 @@ $color-orange: rgb(249, 136, 5);
     align-items: center;
     text-align: center;
 
-    min-height: 420px;
+    min-height: 380px;
+
+    @media screen and (min-width: $s) {
+      min-height: 420px;
+    }
   }
 
   &__title {
-    font-size: 28px;
+    font-size: 22px;
     font-family: "Roboto";
     color: rgb(0, 0, 0);
     line-height: 1.4;
     margin: 10px 0 5px 0;
     font-weight: 600;
+
+    @media screen and (min-width: $l) {
+      font-size: 28px;
+    }
   }
 
   &__subtitle {
-    font-size: 18px;
+    font-size: 15px;
     font-family: "Roboto";
     font-weight: 300;
     color: rgb(0, 0, 0);
     line-height: 1.4;
     margin: 5px 0;
+
+    @media screen and (min-width: $l) {
+      font-size: 18px;
+    }
   }
 
   &__divider {
@@ -642,7 +792,11 @@ $color-orange: rgb(249, 136, 5);
     height: 1px;
     background: #bfbfbf;
 
-    margin: 20px 0;
+    margin: 15px 0;
+
+    @media screen and (min-width: $l) {
+      margin: 20px 0;
+    }
   }
 
   &__value {
@@ -656,9 +810,14 @@ $color-orange: rgb(249, 136, 5);
 
   &__description {
     position: relative;
-    max-height: 170px;
-    min-height: 170px;
+    max-height: 150px;
+    min-height: 150px;
     overflow: hidden;
+
+    @media screen and (min-width: $s) {
+      max-height: 170px;
+      min-height: 170px;
+    }
 
     &::after {
       content: ' ';
@@ -671,13 +830,17 @@ $color-orange: rgb(249, 136, 5);
     }
 
     p {
-      font-size: 18px;
+      font-size: 15px;
       font-family: "Roboto";
       font-weight: 300;
       color: rgb(0, 0, 0);
       line-height: 22px;
 
       margin: 10px 0;
+
+      @media screen and (min-width: $l) {
+        font-size: 18px;
+      }
     }
   }
 
@@ -699,31 +862,64 @@ $color-orange: rgb(249, 136, 5);
   background-repeat: no-repeat;
   background-size: cover;
 
+  @media only screen and (max-width: $m) {
+    .ce-container {
+      padding: 0;
+    }
+  }
+
   &__inner {
-    padding: 70px 0;
+    padding: 50px 0 25px 0;
+
+    @media only screen and (min-width: $s) {
+      padding: 70px 0;
+    }
   }
 
   &__top {
     margin-bottom: 100px;
+
+    @media screen and (max-width: $m - 1) {
+      padding: 0 15px;
+      margin-bottom: 50px;
+    }
   }
 
   &__list {
     margin: 0;
     padding: 0;
     list-style: none;
-    margin-left: -15px;
-    margin-right: -15px;
-    display: flex;
+
+    .owl-controls {
+      margin-top: 30px;
+    }
+
+    .owl-dot {
+      &.active {
+        span {
+          background: #4e96d5 !important;
+        }
+      }
+      span {
+        width: 14px !important;
+        height: 14px !important;
+        background: rgba(#000, .1) !important;
+        margin: 5px !important;
+      }
+    }
   }
 
   &__item {
-    width: calc(100% / 3);
     padding: 0 15px;
   }
 }
 
 .ce-quote {
   max-width: 700px;
+
+  @media only screen and (max-width: $s - 1) {
+    padding: 0 15px;
+  }
 
   &__container {
     position: relative;
@@ -746,11 +942,16 @@ $color-orange: rgb(249, 136, 5);
 
   &__quote {
     display: block;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 26px;
     font-family: "Roboto";
     color: rgb(255, 255, 255);
     font-weight: 100;
+
+    @media screen and (min-width: $s) {
+      font-size: 18px;
+      line-height: 30px;
+    }
   }
 
   &__link {
@@ -860,7 +1061,20 @@ $color-orange: rgb(249, 136, 5);
 }
 
 .ce-clients {
-  padding: 70px 0;
+  padding: 50px 0;
+
+  @media only screen and (min-width: $s) {
+    padding: 70px 0;
+  }
+
+  .ce-container {
+    padding: 0;
+
+    @media only screen and (min-width: $s) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
 
   &__inner {
     overflow: hidden;
@@ -939,8 +1153,28 @@ $color-orange: rgb(249, 136, 5);
 }
 
 .ce-roles {
-  padding: 70px;
-  background: #f3f3f3;
+  padding: 50px 0;
+
+  @media screen and (min-width: $s) {
+    padding: 70px 0;
+    background: #f3f3f3;
+  }
+
+  &__toggle {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background: linear-gradient(rgba(255,255,255,0) 0%, #fff 70%, #fff 100%);
+  }
+
+  &__button {
+    margin: 200px 0 0 0;
+    text-transform: uppercase;
+    min-width: 200px;
+  }
 
   &__head {
     text-align: center;
@@ -952,7 +1186,19 @@ $color-orange: rgb(249, 136, 5);
   }
 
   &__list {
+    position: relative;
     margin-top: 70px;
+    overflow: hidden;
+
+    &_hide {
+      @media screen and (max-width: $s - 1) {
+        max-height: 500px;
+
+        .ce-roles__toggle {
+          display: block;
+        }
+      }
+    }
   }
 
   &__item {
@@ -1012,16 +1258,23 @@ $color-orange: rgb(249, 136, 5);
   }
 
   &__copyright {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 
     font-size: 15px;
     line-height: 20px;
     font-family: "Roboto";
     color: rgba(0, 0, 0, 0.502);
     font-weight: 300;
+
+    @media only screen and (min-width : $s) {
+      display: block;
+      text-align: center;
+    }
   }
 
   &__title {
+    display: none;
     font-size: 20px;
     font-family: "Roboto";
     color: rgb(0, 0, 0);
@@ -1032,9 +1285,15 @@ $color-orange: rgb(249, 136, 5);
     padding-bottom: 15px;
     margin-bottom: 25px;
     border-bottom: 1px solid #dadada;
+
+    @media only screen and (min-width : $m) {
+      display: block;
+    }
   }
 
   &__cloud {
+    display: none;
+
     a {
       font-size: 15px;
       font-family: "Roboto";
@@ -1042,10 +1301,18 @@ $color-orange: rgb(249, 136, 5);
       color: rgb(38, 38, 38);
       line-height: 28px;
     }
+
+    @media only screen and (min-width : $m) {
+      display: block;
+    }
   }
 
   &__posts {
+    display: none;
 
+    @media only screen and (min-width : $m) {
+      display: block;
+    }
   }
 
   &__post {
@@ -1221,8 +1488,11 @@ $color-orange: rgb(249, 136, 5);
     display: block;
 
     svg {
+      display: block;
       path {
-        fill: #bfbfbf;
+        @media only screen and (min-width: $s) {
+          fill: #bfbfbf;
+        }
       }
     }
   }
@@ -1231,8 +1501,62 @@ $color-orange: rgb(249, 136, 5);
 .ce-videos {
   background: #fff;
 
+  .ce-container {
+    @media screen and (max-width: $m - 1) {
+      padding: 0;
+    }
+  }
+
+  &__head {
+    @media screen and (max-width: $m - 1) {
+      padding: 0 15px;
+    }
+  }
+
+  &__list {
+    display: none;
+  }
+
+  &__mobile {
+    display: blok;
+
+    @media screen and (min-width: 1100px) {
+      display: none;
+    }
+
+    .owl-controls {
+      margin-top: 15px;
+    }
+
+    .owl-dot {
+      &.active {
+        span {
+          background: #4e96d5 !important;
+        }
+      }
+      span {
+        width: 14px !important;
+        height: 14px !important;
+        background: rgba(#000, .1) !important;
+        margin: 5px !important;
+      }
+    }
+  }
+
+  &__desktop {
+    display: none;
+
+    @media screen and (min-width: 1100px) {
+      display: block;
+    }
+  }
+
   &__inner {
-    padding: 70px 0;
+    padding: 50px 0 0 0;
+
+    @media screen and (min-width: $s) {
+      padding: 70px 0;
+    }
   }
 
   &__head {
@@ -1250,11 +1574,16 @@ $color-orange: rgb(249, 136, 5);
   }
 
   &__line {
+    display: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
     border-bottom: 2px dotted #1d73be;
+
+    @media screen and (min-width: 1100px) {
+      display: block;
+    }
 
     &::before {
       content: ' ';
@@ -1307,6 +1636,15 @@ $color-orange: rgb(249, 136, 5);
   &__final {
     padding: 30px 0;
 
+    &-arrow {
+      width: 10px;
+      height: 29px;
+      margin: 10px auto;
+      background-image: url('../images/arrow_down.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
     &-title {
       font-size: 22px;
       line-height: 30px;
@@ -1319,6 +1657,20 @@ $color-orange: rgb(249, 136, 5);
     &-video {
       margin-top: 20px;
     }
+    &_full {
+      padding: 0;
+      text-align: center;
+
+      .ce-videos__final-title {
+        text-transform: none;
+        font-size: 26px;
+      }
+    }
+  }
+
+  &__full {
+    background: #1d73be;
+    margin-top: 30px;
   }
 }
 
@@ -1326,6 +1678,45 @@ $color-orange: rgb(249, 136, 5);
   padding: 30px 0;
   display: flex;
   align-items: center;
+
+  &_full {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    .ce-video__thumb {
+      margin-top: -15px;
+      width: 100%;
+      min-height: 240px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &_column {
+    padding: 0 15px;
+    flex-direction: column;
+    text-align: center;
+
+    .ce-video__info {
+      margin: 0;
+      padding: 15px 0 0 0;
+    }
+
+    .ce-video__thumb {
+      width: 100%;
+      min-height: 150px;
+
+      @media screen and (min-width: $s) {
+        height: 150px;
+      }
+    }
+
+    .ce-video__desc {
+      padding: 0 15px;
+    }
+
+  }
 
   &__thumb {
     position: relative;
