@@ -376,10 +376,14 @@ $l: 1280px;
 
   .owl-dots {
     position: absolute;
-    top: 90%;
+    bottom: 15px;
     left: 0;
     right: 0;
     min-width: 100px;
+
+    @media screen and (min-width: $s) {
+      bottom: 20px;
+    }
   }
 
   .owl-dot {
