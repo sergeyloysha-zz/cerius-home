@@ -6,22 +6,122 @@ $(function(){
   $('.ce-home-slider__list').owlCarousel({
     loop:true,
     items: 1,
-    nav: true,
-    navText: ['', '']
+    nav: false,
+    navText: ['', ''],
+    responsive: {
+      1280: {
+        nav: true
+      }
+    }
+  });
+
+  $('.ce-features__list').owlCarousel({
+    loop:true,
+    items: 3,
+    dots: false,
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
+        center: true,
+        dots: true,
+        stagePadding: 40
+      },
+      768: {
+        items: 2,
+        nav: false,
+        dots: true,
+        stagePadding: 40
+      },
+      992: {
+        items: 3,
+        nav: false,
+        dots: false,
+        loop: false,
+        stagePadding: 0
+      }
+    }
   });
 
   $('.ce-fields__list').owlCarousel({
     loop:true,
-    items: 3,
-    nav: true,
-    navText: ['', '']
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
+        center: true,
+        stagePadding: 40
+      },
+      768: {
+        items: 2,
+        nav: false,
+        stagePadding: 40
+      },
+      992: {
+        items: 3,
+        nav: false,
+        stagePadding: 0
+      },
+      1280: {
+        nav: true
+      }
+    }
   });
 
   $('.ce-clients__list').owlCarousel({
     loop:true,
-    items: 4,
     dots: false,
-    nav: true,
-    navText: ['', '']
+    nav: false,
+    navText: ['', ''],
+    responsive : {
+      0: {
+        items: 1,
+        stagePadding: 60
+      },
+      640: {
+        items: 2,
+        stagePadding: 60
+      },
+      768: {
+        items: 3,
+      },
+      992: {
+        items: 4,
+      },
+      1280: {
+        items: 4,
+        nav: true
+      }
+    }
   });
+
+  $('.ce-videos__list').owlCarousel({
+    loop:true,
+    nav: false,
+    dots: true,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 40
+      },
+
+      480: {
+        items: 2,
+        stagePadding: 40,
+      },
+      860: {
+        items: 4,
+        stagePadding: 0,
+        loop: false,
+        dots: false
+      }
+    }
+  });
+
+  $('.ce-roles__button').on('click', function(e) {
+    e.preventDefault();
+    $('.ce-roles__list').removeClass('ce-roles__list_hide');
+  })
 });
